@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    environment {
+        PYTHON_EXE = 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+    }
+
+    stages {
+        stage('Check Python Version') {
+            steps {
+                bat '"%PYTHON_EXE%" --version'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                bat '"%PYTHON_EXE%" -m pip install -r requirements.txt'
+            }
+        }
+
+        stage('Run Calculator Program') {
+            steps {
+                bat '"%PYTHON_EXE%" calculator.py'
+            }
+        }
+
+        stage('Run Test Cases') {
+            steps {
+                bat '"%PYTHON_EXE%" -m pytest'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Jenkins Pipeline Passed!'
+        }
+        failure {
+            echo 'Jenkins Pipeline Failed!'
+        }
+    }
+}

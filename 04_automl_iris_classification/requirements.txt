@@ -1,0 +1,3 @@
+lazypredict
+pandas
+scikit-learn

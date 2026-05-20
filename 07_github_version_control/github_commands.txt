@@ -1,0 +1,28 @@
+GitHub Version Control Commands
+
+1. Check Git Version
+git --version
+
+2. Initialize Git Repository
+git init
+
+3. Check Repository Status
+git status
+
+4. Add All Files
+git add .
+
+5. Commit Files
+git commit -m "Initial commit for MLOps tools assignment"
+
+6. Rename Branch to main
+git branch -M main
+
+7. Add Remote Repository
+git remote add origin https://github.com/your-username/mlops-tools-assignment.git
+
+8. Push Code to GitHub
+git push -u origin main
+
+9. Check Commit History
+git log --oneline
